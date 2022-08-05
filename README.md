@@ -27,3 +27,7 @@ After upgrading yarn to the v3.2.2, it works again:
 It compiles properly:
 
 ![it compiles with node 16 and yarn v3.2.2](public/node-16-yarn-3-2-2-esm-enabled.png)
+
+## Full outputs
+
+You can check the [CI runs](https://github.com/Ayc0/mdx2-yarn3/runs/7688799378) to output in different Node/yarn versions and with ESM enabled/disabled.
