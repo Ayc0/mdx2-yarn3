@@ -2,7 +2,6 @@ module.exports = {
   entry: "./entry.mdx",
   output: {
     filename: "out.js",
-    path: "/",
   },
   target: "web",
   mode: "production",
