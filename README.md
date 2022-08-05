@@ -14,4 +14,16 @@ When I set `pnpEnableEsmLoader: false` in `.yarnrc.yml`, I have the following er
 
 When I set `pnpEnableEsmLoader: true` in `.yarnrc.yml`, I have the following error `ERR_LOADER_CHAIN_INCOMPLETE`:
 
-![ERR_LOADER_CHAIN_INCOMPLETE](public/node-18-esm-enabled.png)
+![ERR_LOADER_CHAIN_INCOMPLETE](public/node-18-yarn-3-2-1-esm-enabled.png)
+
+After upgrading yarn to the v3.2.2, it works again:
+
+![it compiles with node 18 and yarn v3.2.2](public/node-18-yarn-3-2-2-esm-enabled.png)
+
+## Node 16 & ESM enabled
+
+### Yarn v3.2.2
+
+It compiles properly:
+
+![it compiles with node 16 and yarn v3.2.2](public/node-16-yarn-3-2-2-esm-enabled.png)
