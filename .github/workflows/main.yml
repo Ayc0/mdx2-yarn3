@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
+
       matrix:
         node-version: [16.x, 18.x]
         folder: [esm-disabled, esm-enabled]
@@ -24,7 +26,6 @@ jobs:
           yarn set version ${{ matrix.yarn-version }}
           yarn install
       - name: Build package
-        continue-on-error: true
         working-directory: ${{ matrix.folder }}
         run: |
           yarn build
