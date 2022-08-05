@@ -1,0 +1,30 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        folder: [esm-disabled, esm-enabled]
+        yarn-version: [3.2.1, 3.2.2]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install yarn
+        working-directory: ${{ matrix.folder }}
+        run: |
+          yarn set version ${{ matrix.yarn-version }}
+          yarn install
+      - name: Build package
+        continue-on-error: true
+        working-directory: ${{ matrix.folder }}
+        run: |
+          yarn build
